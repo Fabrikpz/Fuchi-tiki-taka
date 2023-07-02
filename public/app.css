@@ -1,7 +1,11 @@
 body {
-    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+    background-color: rgb(83, 83, 87);
+    color:white;
+    font-family: 'Raleway', sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     justify-content: center;
     height: 100vh;
     overflow: hidden; /* Deshabilitar desplazamiento (barra de scroll) */
@@ -11,13 +15,15 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
-    max-width: 500px;
+    max-width: 600px;
     overflow: auto; /* Habilitar desplazamiento interno si el contenido excede el tamaño */
 }
 
 .grid-item {
     border: 1px solid #ccc;
     padding: 20px;
+    width: 100px;
+    height: 55px;
     text-align: center;
 }
 
@@ -36,4 +42,18 @@ body {
 .fuchi-logo{
     width: 50px;
     height: 50px;
+}
+
+.title{
+    background-color: rgb(50, 50, 54);
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Add this line to enable flexbox layout */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
 }
