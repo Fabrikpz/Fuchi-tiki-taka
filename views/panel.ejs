@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuchi tiki taka</title>
+    <link rel="stylesheet" href="/app.css">
+    <link rel="icon" href="../public/imgs/icono.ico"" type="image/x-icon">
+</head>
+<body>
+    <div class="grid-container"> <!-- Grillas -->
+        <div class="grid-item empty">
+            <img class="fuchi-logo" src="../public/imgs/fuchi-tiki-taka-logo.png"/>
+        </div>
+        <% for (let i = 0; i < 3; i++) { %>
+            <div class="grid-item team"><%= topTeams[i] %></div>
+        <% } %>
+        <% for (let i = 0; i < 3; i++) { %>
+            <div class="grid-item team"><%= leftTeams[i] %></div>
+            <% for (let j = 0; j < 3; j++) { %>
+                <div class="grid-item player"><%= players[i * 3 + j] %></div>
+            <% } %>
+        <% } %>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>
