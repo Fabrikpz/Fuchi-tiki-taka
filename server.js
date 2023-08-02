@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-/*dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./config.env" });
 const DB = process.env.DATABASE.replace("<PASSWORD>", process.env.DATABASE_PASSWORD);
 
 mongoose
@@ -38,7 +38,7 @@ mongoose
     .then((con) => {
         //console.log(con.connections);
         console.log("Connected to database");
-    });*/
+    });
 
 app.use("/", myRouter);
 
