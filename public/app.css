@@ -32,16 +32,22 @@ body {
 }
 
 .team {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .player {
-    font-size: 12px;
+    font-size: 16px;
+}
+
+.logo-grid{
+    border: 1px solid #ccc;
+    /*width: 100%; /* La imagen ocupará todo el ancho del div */
+    /*height: 100%; /* La imagen ocupará todo el alto del div **/
 }
 
 .fuchi-logo{
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
 }
 
 .title{
@@ -56,4 +62,16 @@ body {
     height: 50px;
     color: white;
     text-align: center;
+}
+
+.search-bar-container{
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.input-player{
+    width: 160px;
+    height: 28px;
+    font-size: 16px;
+    text-indent: 5px;
 }

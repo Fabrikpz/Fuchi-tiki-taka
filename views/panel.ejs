@@ -16,8 +16,8 @@
         <h1 class="title"> Fuchi-Tiki-Taka</h1>
     </header>
 
-    <div class="grid-container"> <!-- Grillas -->
-        <div class="grid-item empty">
+    <div class="grid-container">
+        <div class="grid-item logo-grid empty">
             <img class="fuchi-logo" src="../public/imgs/fuchi-tiki-taka-logo.png"/>
         </div>
         <% for (let i = 0; i < 3; i++) { %>
@@ -29,6 +29,10 @@
                 <div class="grid-item player"><%= players[i * 3 + j] %></div>
             <% } %>
         <% } %>
+    </div>
+
+    <div class="search-bar-container">
+        <input type="text" class="input-player" placeholder="Buscar jugador"></input>
     </div>
 
     <script src="../app.js"></script>
