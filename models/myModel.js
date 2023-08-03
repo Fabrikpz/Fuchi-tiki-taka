@@ -1,24 +1,29 @@
 const mongoose = require("mongoose");
 
-const postSchema = new mongoose.Schema({
-    title: {
+const jugadorSchema = new mongoose.Schema({
+    nombre: {
         type: String,
-        required: [true, "Un post debe tener un título"],
+        required: true,
     },
-    description: {
+    apellido: {
         type: String,
-        required: [true, "Un post debe tener una descripción"],
+        required: true,
     },
-    date: {
-        type: Date,
-        required: [true, "Un post debe tener una fecha"],
+    edad: {
+        type: Number,
+        required: true,
     },
-    technologies: {
-        type: [String],
-        required: [true, "Un post debe contar con tecnologías"],
+    pais: {
+        type: String,
+        required: true,
     },
+    club: {
+        type: String,
+        required: true,
+    },
+
 });
 
-const Post = mongoose.model("Post", postSchema);
+const Jugador = mongoose.model("Jugador", jugadorSchema);
 
-module.exports = Post;
+module.exports = Jugador;
