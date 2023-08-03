@@ -7,6 +7,7 @@ const ejs = require('ejs');
 const path = require('path');
 const port = 2500;
 const myRouter = require("./routes/myRouter.js");
+const dotenv = require('dotenv');
 
 app.use(express.static('./', {
     setHeaders: (res, path) => {
