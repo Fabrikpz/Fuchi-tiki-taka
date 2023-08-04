@@ -1,4 +1,5 @@
 const Jugador = require('../models/myModel');
+const Club = require('../models/myModel');
 
 exports.juego = (req, res) => {
     const topTeams = ['Manchester United', 'Manchester City', 'PSG'];
