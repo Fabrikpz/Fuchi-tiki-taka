@@ -8,6 +8,20 @@ const path = require('path');
 const port = 2500;
 const myRouter = require("./routes/myRouter.js");
 const dotenv = require('dotenv');
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+mongoose
+    .connect(DB, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => {
+        console.log('Conexión a MongoDB exitosa');
+    })
+    .catch((err) => {
+        console.error('Error al conectar a MongoDB:', err);
+    });
 
 app.use(express.static('./', {
     setHeaders: (res, path) => {
@@ -28,20 +42,8 @@ app.use('/imgs', express.static(path.join(__dirname, 'public/imgs')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
-dotenv.config({ path: "./config.env" });
-const DB = process.env.DATABASE.replace("<PASSWORD>", process.env.DATABASE_PASSWORD);
-
-mongoose
-    .connect(DB, {
-        useNewUrlParser: true,
-    })
-    .then((con) => {
-        //console.log(con.connections);
-        console.log("Connected to database");
-    });
-
 app.use("/", myRouter);
+
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port} correctamente`);

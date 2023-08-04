@@ -1,6 +1,6 @@
 const Jugador = require('../models/myModel');
 
-exports.inicio = (req, res) => {
+exports.juego = (req, res) => {
     const topTeams = ['Manchester United', 'Manchester City', 'PSG'];
     const leftTeams = ['Real Madrid', 'Bayern', 'Liverpool'];
     const players = [
@@ -12,8 +12,18 @@ exports.inicio = (req, res) => {
 
 exports.crearjugador = async (req, res) => {
     jugadoresArr = [
-        { "nombre": "Lionel", "apellido": "Messi", "edad": 36, "pais": "Argentina", "club": "PSG" },
-        { "nombre": "Mohamed", "apellido": "Salah", "edad": 31, "pais": "Egipto", "club": "Liverpool" }
+        { "nombre": "Lionel", "apellido": "Messi", "pais": "Argentina", "club": "Inter de miami" },
+        { "nombre": "Mohamed", "apellido": "Salah", "pais": "Egipto", "club": "Liverpool" },
+        { "nombre": "Cristano", "apellido": "Ronaldo", "pais": "Portugal", "club": "Al Nasrr" },
+        { "nombre": "Killian", "apellido": "Mbappe", "pais": "Brasil", "club": "PSG" },
+        { "nombre": "Vinicius", "apellido": "Júnior ", "pais": "Brasil", "club": "Real Madrid" },
+        { "nombre": "Robert", "apellido": "Lewandowski", "pais": "Polonia", "club": "Barcelona" },
+        { "nombre": "Victor", "apellido": "Osimhen", "pais": "Nigeria", "club": "Napoli" },
+        { "nombre": "Karim", "apellido": "Benzema", "pais": "Francia", "club": "Real Madrid" },
+        { "nombre": "Marc-André", "apellido": "ter Stegen", "pais": "Alemania", "club": "Barcelona" },
+        { "nombre": "Khvicha", "apellido": "Kvaratskhelia", "pais": "Georgia", "club": "Napoli" },
+        { "nombre": "Rodrigo", "apellido": "Goes", "pais": "Brasil", "club": "Real Madrid" }
+        //pone a victr oshimen godetos medran AVISA CUANDO PONGAS TODOS, ASI LOS GUARDO EN LA BASE DE DATOS CON POSTMAN
     ];
 
     try {
@@ -29,3 +39,12 @@ exports.crearjugador = async (req, res) => {
         res.status(500).json({ error: 'error al guardar players' });
     }
 };
+
+exports.obtenerJugadores = async (req, res) => {
+    try {
+        const jugadores = await Jugador.find();
+        res.json(jugadores);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching users', error: err });
+    }
+}

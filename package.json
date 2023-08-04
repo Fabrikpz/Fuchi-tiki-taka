@@ -1,7 +1,7 @@
 {
-    "name": "expressbase",
+    "name": "fuchitikitaka",
     "version": "1.0.0",
-    "description": "Proyecto con estructura recomendada para comenzar nuevos proyectos con ExpressJs",
+    "description": "fuchi tiki taka, el juego",
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
         "expressJs",
         "base"
     ],
-    "author": "Lic. García Héctor",
+    "author": "Fabrikpz",
     "license": "ISC",
     "dependencies": {
         "dotenv": "^16.0.0",

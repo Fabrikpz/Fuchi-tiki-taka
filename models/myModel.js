@@ -9,10 +9,6 @@ const jugadorSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    edad: {
-        type: Number,
-        required: true,
-    },
     pais: {
         type: String,
         required: true,
@@ -21,7 +17,6 @@ const jugadorSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-
 });
 
 const Jugador = mongoose.model("Jugador", jugadorSchema);
