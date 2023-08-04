@@ -23,7 +23,6 @@ exports.crearjugador = async (req, res) => {
         { "nombre": "Marc-André", "apellido": "ter Stegen", "pais": "Alemania", "club": "Barcelona" },
         { "nombre": "Khvicha", "apellido": "Kvaratskhelia", "pais": "Georgia", "club": "Napoli" },
         { "nombre": "Rodrigo", "apellido": "Goes", "pais": "Brasil", "club": "Real Madrid" }
-        //pone a victr oshimen godetos medran AVISA CUANDO PONGAS TODOS, ASI LOS GUARDO EN LA BASE DE DATOS CON POSTMAN
     ];
 
     try {
