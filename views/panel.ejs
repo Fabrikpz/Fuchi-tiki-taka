@@ -26,7 +26,7 @@
         <% for (let i = 0; i < 3; i++) { %>
             <div class="grid-item team"><%= leftTeams[i] %></div>
             <% for (let j = 0; j < 3; j++) { %>
-                <div class="grid-item player"><%= players[i * 3 + j] %></div>
+                <button class="player" onclick="showInput()"></button>
             <% } %>
         <% } %>
     </div>
