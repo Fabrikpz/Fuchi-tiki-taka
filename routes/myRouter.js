@@ -2,13 +2,14 @@ const myController = require('../controllers/myController');
 const express = require('express');
 const router = express.Router();
 
-//Renderiza el juego
+// Renderiza el juego
 router.route('/juego').get(myController.juego);
 
-//Crea nuevos jugadores en la DB
-router.route("/juego/crearjugadores").post(myController.crearjugador);
+// Obtiene la info de los jugadores
+router.route('/juego/jugadores').get(myController.obtenerJugadores);
 
-//Obtiene la info de los jugadores
-router.get("/juego/jugadores", myController.obtenerJugadores);
+//update
+router.route("/juego/god").put(myController.actualizarJugador)
 
 module.exports = router;
+

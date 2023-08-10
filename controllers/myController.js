@@ -1,5 +1,5 @@
-const Jugador = require('../models/myModel');
-const Club = require('../models/myModel');
+const Jugador = require('../models/jugadores');
+const Club = require('../models/clubes');
 
 exports.juego = (req, res) => {
     const topTeams = ['Manchester United', 'Manchester City', 'PSG'];
@@ -11,7 +11,7 @@ exports.juego = (req, res) => {
     res.render('panel', { topTeams, leftTeams, players });
 };
 
-exports.crearjugador = async (req, res) => {
+exports.crearjugadores = async (req, res) => {
     jugadoresArr = [
         { "nombre": "Lionel", "apellido": "Messi", "pais": "Argentina", "club": "Inter de miami" },
         { "nombre": "Mohamed", "apellido": "Salah", "pais": "Egipto", "club": "Liverpool" },
@@ -23,7 +23,7 @@ exports.crearjugador = async (req, res) => {
         { "nombre": "Karim", "apellido": "Benzema", "pais": "Francia", "club": "Real Madrid" },
         { "nombre": "Marc-André", "apellido": "ter Stegen", "pais": "Alemania", "club": "Barcelona" },
         { "nombre": "Khvicha", "apellido": "Kvaratskhelia", "pais": "Georgia", "club": "Napoli" },
-        { "nombre": "Rodrigo", "apellido": "Goes", "pais": "Brasil", "club": "Real Madrid" }
+        { "nombre": "Rodrigo", "apellido": "Goes", "pais": "Brasil", "club": "Real Madrid" },
     ];
 
     try {
@@ -40,6 +40,7 @@ exports.crearjugador = async (req, res) => {
     }
 };
 
+
 exports.obtenerJugadores = async (req, res) => {
     try {
         const jugadores = await Jugador.find();
@@ -48,3 +49,27 @@ exports.obtenerJugadores = async (req, res) => {
         res.status(500).json({ message: 'Error fetching users', error: err });
     }
 }
+
+
+const updatedData = 
+{
+    apellido: "Ter Stegen"
+}
+
+const playerId = "64cc49846667a05c18f2eb5d"
+
+exports.actualizarJugador = async (req, res) => {
+    try {
+  
+        const updatedPlayer = await Jugador.findByIdAndUpdate(playerId, updatedData, { new: true }).lean();
+  
+      if (!updatedPlayer) {
+        return res.status(404).json({ error: 'Item not found' });
+      }
+  
+      return res.json(updatedPlayer);
+    } catch (error) {
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  
