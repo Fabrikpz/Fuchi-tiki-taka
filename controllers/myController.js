@@ -51,7 +51,7 @@ exports.obtenerJugadores = async (req, res) => {
 }
 
 
-const updatedData = 
+const updatedData =
 {
     apellido: "Ter Stegen"
 }
@@ -60,16 +60,31 @@ const playerId = "64cc49846667a05c18f2eb5d"
 
 exports.actualizarJugador = async (req, res) => {
     try {
-  
         const updatedPlayer = await Jugador.findByIdAndUpdate(playerId, updatedData, { new: true }).lean();
-  
-      if (!updatedPlayer) {
-        return res.status(404).json({ error: 'Item not found' });
-      }
-  
-      return res.json(updatedPlayer);
+
+        if (!updatedPlayer) {
+            return res.status(404).json({ error: 'Item not found' });
+        }
+
+        return res.json(updatedPlayer);
     } catch (error) {
-      return res.status(500).json({ error: 'Internal server error' });
+        return res.status(500).json({ error: 'Internal server error' });
     }
-  };
-  
+};
+
+exports.eliminarJugador = async (req, res) => {
+    const jugadorId = "64cc49836667a05c18f2eb55"; 
+
+    try {
+        const jugadorEliminado = await Jugador.findByIdAndDelete(jugadorId);
+
+        if (jugadorEliminado) {
+            res.json({ message: 'Jugador eliminado correctamente' });
+        } else {
+            res.status(404).json({ message: 'Jugador no encontrado' });
+        }
+    } catch (error) {
+        console.error('Error al eliminar jugador', error);
+        res.status(500).json({ error: 'Error al eliminar jugador' });
+    }
+};
