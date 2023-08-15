@@ -8,18 +8,24 @@ function showInput() {
         button.addEventListener("click", () => {
             selectedButton = button;
             input.style.display = "flex";
+            input.value = selectedButton.textContent; // Coloca el texto actual del botón en el input
         })
     })
 };
 
 input.addEventListener("keydown", (event) => {
-    if (event.keyCode === 13) {
-        selectedButton.textContent = input.value;
-        selectedButton = null;
-        console.log("Enter presionado");
+    if (event.keyCode === 13 && selectedButton) {
+        input.value = ""; // Limpiar el input después de asignar el texto al botón
+        input.style.display = "none"; // Ocultar el input después de asignar el texto al botón
     }
-    input.value = "";
-    input.style.display = "none";
+});
+
+
+document.addEventListener("click", (event) => {
+    if (!input.contains(event.target) && !selectedButton.contains(event.target)) {
+        input.value = ""; // Limpiamos el input al hacer clic fuera
+        input.style.display = "none"; // Ocultamos el input al hacer clic fuera
+    }
 });
 
 showInput();
