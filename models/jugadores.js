@@ -14,7 +14,7 @@ const jugadorSchema = new mongoose.Schema({
         required: true,
     },
     club: {
-        type: String,
+        type: Array,
         required: true,
     },
 });

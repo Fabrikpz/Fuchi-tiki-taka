@@ -13,15 +13,15 @@ exports.juego = (req, res) => {
 
 exports.crearjugadores = async (req, res) => {
     jugadoresArr = [
-        { "nombre": "Lionel", "apellido": "Messi", "pais": "Argentina", "club": "Inter de miami" },
-        { "nombre": "Mohamed", "apellido": "Salah", "pais": "Egipto", "club": "Liverpool" },
-        { "nombre": "Cristano", "apellido": "Ronaldo", "pais": "Portugal", "club": "Al Nasrr" },
-        { "nombre": "Killian", "apellido": "Mbappe", "pais": "Brasil", "club": "PSG" },
+        { "nombre": "Lionel", "apellido": "Messi", "pais": "Argentina", "club": "Inter de miami","club": " PSG","club": " Barcelona" },
+        { "nombre": "Mohamed", "apellido": "Salah", "pais": "Egipto", "club": "Liverpool","club": " Chelsea","club": "As Roma"},
+        { "nombre": "Cristano", "apellido": "Ronaldo", "pais": "Portugal", "club": "Al Nasrr","club": " Manchester united","club": " Juventus","club": "Real Madrid" },
+        { "nombre": "Killian", "apellido": "Mbappe", "pais": "Brasil", "club": "PSG","club": "Monaco" },
         { "nombre": "Vinicius", "apellido": "Júnior ", "pais": "Brasil", "club": "Real Madrid" },
-        { "nombre": "Robert", "apellido": "Lewandowski", "pais": "Polonia", "club": "Barcelona" },
+        { "nombre": "Robert", "apellido": "Lewandowski", "pais": "Polonia", "club": "Barcelona","club": "Bayern München","club" : "Borussia Dortmund"},
         { "nombre": "Victor", "apellido": "Osimhen", "pais": "Nigeria", "club": "Napoli" },
-        { "nombre": "Karim", "apellido": "Benzema", "pais": "Francia", "club": "Real Madrid" },
-        { "nombre": "Marc-André", "apellido": "ter Stegen", "pais": "Alemania", "club": "Barcelona" },
+        { "nombre": "Karim", "apellido": "Benzema", "pais": "Francia","club": "ittihad club", "club": "Real Madrid" },
+        { "nombre": "Marc-André", "apellido": "ter Stegen", "pais": "Alemania", "club": "Barcelona","club": "Borussia Mönchengladbach" },
         { "nombre": "Khvicha", "apellido": "Kvaratskhelia", "pais": "Georgia", "club": "Napoli" },
         { "nombre": "Rodrigo", "apellido": "Goes", "pais": "Brasil", "club": "Real Madrid" },
     ];
